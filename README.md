@@ -1,1 +1,1 @@
-# kidney
+# disease classification

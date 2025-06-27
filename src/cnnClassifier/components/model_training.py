@@ -3,6 +3,8 @@ import urllib.request as request
 from zipfile import ZipFile
 import tensorflow as tf
 import time
+from pathlib import Path
+from cnnClassifier.entity.config_entity import TrainingConfig
 tf.config.run_functions_eagerly(True)
 
 from cnnClassifier.entity.config_entity import TrainingConfig
@@ -18,11 +20,11 @@ class Training:
         )
         self.model.compile(
             optimizer='adam',
-            loss='categorical_crossentropy',  # or 'binary_crossentropy' if 2 classes
+            loss='categorical_crossentropy',  
             metrics=['accuracy']
         )
 
-    def train_valid_generator(self):  # ✅ FIXED: now it's inside the class
+    def train_valid_generator(self):  
         datagenerator_kwargs = dict(
             rescale=1. / 255,
             validation_split=0.20

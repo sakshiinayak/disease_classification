@@ -1,0 +1,5 @@
+{
+  "python.analysis.extraPaths": [
+    "C:/Users/sakshi/anaconda3/envs/disease/Lib/site-packages"
+  ]
+}

@@ -13,7 +13,7 @@ class PredictionPipeline:
         try:
             # Get project root directory and construct correct model path
             project_root = Path(__file__).parent.parent.parent.parent
-            model_path = project_root / "artifacts" / "training" / "model.h5"
+            model_path = project_root / "model" / "model.h5"
             
             # Check if model file exists
             if not os.path.exists(model_path):

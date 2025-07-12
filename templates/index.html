@@ -4,231 +4,543 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>cnncls</title>
-	<link rel="shortcut icon"
-        href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAIq0lEQVRYw6WWa3BV1RXH/2vv88zNi5AHgTyIISSIEAgPeUwUrFDFx9hqx9F2dDp2dGy105m2fFG/tLXtdPqYim0dWkundbSjBtEWqIoVCWhIkKcJGpKQBxCSkJt7b3If55x99uoHkCk2QqTr29lz9t6//d/rv9ciTDHOjGucPefL/uFkxZYPjGkh3JLZ+VxKAnzsNPfOKfTiD6+RYW15Vo8ledw15ZTWpSv90DmYptYT6RmH+8W6D7pFY9LHqlNxWZhSpmsJ6UJqeAFP5NvKn1sU+jOy1a7qwmDbhqXZbXPL3cHiCPFVAQRaY097qrBpv/pq68nwof64vSielFYAA0wEYg1NAnRhCQIAUrCERqEdpufP0ocWloW/vW+1/a/6KichSUwdIOGF4rWW5LIdR8On3zturz7nmQ4jBCkTwtBwLfZybT/tGgGICQnPQDwwnUDBCbUAICBIYVaOSt40T7+2upaeumdlpDff+d/tjMkAmpqHl/91n/XnloFInR8aJBjIdkJ/drF/srooaK4oct5zrcwn84oy0Bpo7beRyOia8VR4S+ewccOpmFmWUoY8E5eRVw4F93UN61JBqe8r1keMzygxKYAg+FqzrzSTIX2eMy04vqY23LL2Wt305Yb8PtcS2hCRS+YklW6LJ9XL2/an5rZ0+t94v9u4fyBmV3qelD2juHFwTN0eahwDoK8IcPfqwkO90eSjAfmbiiL+6Jo62njn9TnHqovti5O19ggAmEwGgAt3rAB0HO1LPrV1f2rn3i5s6hziupvnixcbr7W22FLoKSdhc0cCKqSFrqnHrqt0B1zHADJRIxjurNIHNheZTt71ysida7DfHQx1HKR5GwatWQ1dmLkskCSQ9BS93jZR3z3or26oyX3xtkXO2FXZEABYJSgYOFgd9O77DvU332acPTJDeEmXdGCQNNgz3FSYVzFCBXU7ac6XXnDm39Em3MLgqt6BvtEAjkmU4xJnmRLaT5DX/vpiffyNXxt9uxuFFxXEDGaCIA0Cg4UAswENU6vS+rNc/8Amp279piBSmXpx92jJjOk2r1+cM3w+na/ggkO9qqy9N/nNiiLzFV+pT7yPmq7lIy9tsgZ2r4TKkGCACWChQZqhSUAoDVAIFiys060zg0zqCd+Pj223HnnntYPiuews7UmRehRA/2UBWns86zdv6m/v/djduHJ2avZt1SNPZp3c9Qs5sG+lVB4xM0IBCCYY4acPEAFEIAYMHQLEsEaPZac77B+ULlhnnxqvqe7vlxW2GfywtSe9cfk1bvoSx/33x1uH/eUHTvK3PBZBZbHVJU/vvSns27dWqCQhJBAYhmYI1gBpgBiEEAADFIKgQXx+zBrqqK4ffK7+9oXB01kmj7/fJb7+zpHUqkx4qREuAkRTWuzppHUDMVlYW6KaNywSm40T/1xrxbpdwfrikzvVMNQEGUOtjY/PP/j+8kq9YyBh5rf1yXtHxtmYFOB0lEs05Fcs6HB2fvjqishR04z1NYgwgCZx/pRfAEILApLRWe7Ih5XlhfRSboS9U1Gx4lj3eOGkAMcHtXN23MxzHSNRkGsd4lhfEatkGUiDWINF+IUUUASQn8qSfqK2sc7oLIqIc6MTsuTjITE5wFhCwVeAY4dBUT4lOfSIOSQCQNAXFOApA0hmEGkwJE3PMZKmIC/DFg1N2DQpQH4EyoTyVaBdFYSFWkYSEEYcVxmCBNi0tHYK0od7fHsizYYl/OCa6f7kSZjw6JwlVMeEL7KHY8EKt6w+auQUnQERmL7o9gRNEtrOjgnLPNxxSs0fS3NxrqP6GmuNzKQADTVWZmZB2ByEhAN9xoam7jLHn1HfrIyckGGAWYAvl4R83ifEBDDATNBOyb4uu7G/d8x4MOOzU1Wgd5dOt3onBVgyU/CaOrVrTkHqzIkRc+X2g/yYqrzlDT1j8SkR4oIKn58DLABNBCYGE6AjhT5Xrd3+bl9J3rm4v7Qy3x9YWY2maa68pEZc0jk+/+yPR8+Mhm7PEN9gCu1eU1PxfLk9mtSJvjUyEzUufxPi/Okl4Nn5mqtuft1c8sAvnYKZQzoMhubNCFvW1Wft/NOmpz+/H6iYbgfvtKd/B2Qyc0rk0QVVkUE5896/6CBeHnQ0PWLE+l0BBfCFGsB8XhRxoa5pjcAp0GH5mnftueuflLOWjSwhAV/rlwmwTCHUVZXjINqdq9q3PY72rQ+KaNccI3OOQgLADMkMkAEtbei8sqhfeUOTOf/un9rVjb0ks/7/tvzTCEc7pH/u5AJ14t8bZLR7HY20Z8uJPmi7AFy8UMusvBbUrH8bZct2WSWLMlP3y+fEu0cTeUMxb2lNRd7+JbOtiYsgoUecGMjhD34l9dEXgNIVoJt/xqJ4/oRhuhcl7h1jau/LZFsSmXUL3OALAWz/MFn8apv60aE+3DOvNPzDXSuynlm30B4pcKYm2LaDSpyNpjdsbdPfLcnRb97f6Dx7a73rTVq0PjtwNuY5P2lKPvGPY+5DY55p9I4FG0cmguUDI+r3bx1Nvb2qxkhlu9akGw+Oh7Kt06t6oy1+z94u89GeqF0xPStcKmSQfO948o83zouEVwRQSquMr1oKHP9rsbQsTQTC2tPjrO8eCa4vyw3fXFXnH35+d7KlKNvrLs8L4YeE5i4hxuOofWxzbG1/3L6ze8SZG/OEBATGA84digeLdx5I05SvIKPCOZt2TKz4Wyt/7+SItTilTMGkIRnItjTnOxzPc9RYxAqhoBFLW5RIysK4LyNplkSKQUKjNCdMN5TTltsb1M8fvilnYMoAIWs7lQnVM2+lKgaG1MY93eKu3qhVHPimYCERXqyOJgQziAESDCUACR/TbOVdVxp8tH6B3LyqLuvvN9aZiauyYcgaJ4ZDd+u+sYYDXfLu/jHnjrMxv3o4bZIiFxACxApCK5gywMx8mqia7rfUlmDr2gWRHbcutk5lmZdvJP4Dl9dVkYcTQYMAAAAASUVORK5CYII=" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<style>
-		body{background-color: #eff2f9;}
-		.iupload h3{color: #1b2d6b;font-size: 30px;font-weight: 700;}
-		.img-part{height:300px;width:300px;margin:0px auto;}
-		.image-part{height:300px;width:300px;border:1px solid #1b2d6b;}
-		.image-part img{position:absolute;height: 300px;width:300px;display:none;padding:5px;}
-		.image-part #video{display:block;height: 300px;width:300px;padding:5px;}
-		.res-part{border:1px solid #dedede;margin-left:20px;height: 310px;width:100%;padding:5px;margin:0px auto;overflow:auto;}
-		.res-part2{border:1px solid #dedede;height: 310px;width:100%;padding:5px;margin:0px auto;}
-		.resp-img{height: 298px;width: 233px;margin:0px auto;}
-		.jsonRes{margin-left:30px;}
-		#send{cursor:pointer;}
-		.btn-part{width:325px;}
-		textarea,
-		select,
-		.form-control,
-		.custom-select,
-		button.btn,
-		.btn-primary,
-		input[type="text"],
-		input[type="url"],
-		.uneditable-input{
-			border: 1px solid #363e75;
-			outline: 0 !important;
-			border-radius:0px;
-			box-shadow: none;
-		   -webkit-box-shadow: none;
-		   -moz-box-shadow: none;
-		   -moz-transition: none;
-		   -webkit-transition: none;
-		}
-		textarea:focus,
-		select:focus,
-		.form-control:focus,
-		.btn:focus,
-		.btn-primary:focus,
-		.custom-select:focus,
-		input[type="text"]:focus,
-		.uneditable-input:focus{
-			border: 1px solid #007bff;
-			outline: 0 !important;
-			border-radius:0px;
-			box-shadow: none;
-		   -webkit-box-shadow: none;
-		   -moz-box-shadow: none;
-		   -moz-transition: none;
-		   -webkit-transition: none;
-		}
-		#loading {
-			position: fixed;
-			left: 0px;
-			top: 0px;
-			width: 100%;
-			height: 100%;
-			z-index: 9999999999;
-			overflow: hidden;
-			background: rgba(255, 255, 255, 0.7);
-		}
-		.loader {
-			border: 8px solid #f3f3f3;
-			border-top: 8px solid #363e75;
-			border-radius: 50%;
-			width: 60px;
-			height: 60px;
-			left: 50%;
-			margin-left: -4em;
-			display: block;
-			animation: spin 2s linear infinite;
-		}
-		.loader,
-		.loader:after {display: block;position: absolute;top: 50%;margin-top: -4.05em;}
-		@keyframes spin {
-			0% {
-				transform: rotate(0deg);
-			}
-			100% {
-				transform: rotate(360deg);
-			}
-		}
-		.right-part{border:1px solid #dedede;padding:5px;}
-		.logo{position:absolute;right:0px;bottom:0px;margin-right:30px;margin-bottom:30px;}
-	</style>
+    <title>Medical Kidney Classification</title>
+    <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏥</text></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #e8f4f8 0%, #f0f8ff 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+            border: 1px solid rgba(200, 220, 240, 0.3);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #b8e6b8 0%, #c8e6c8 100%);
+            color: #2c5530;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            color: #3a6b3e;
+        }
+
+        .disclaimer {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+            color: #856404;
+            padding: 15px 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            border-bottom: 1px solid rgba(200, 180, 100, 0.3);
+        }
+
+        .main-content {
+            padding: 40px 20px;
+        }
+
+        .upload-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .image-container {
+            position: relative;
+            background: #fafbfc;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease;
+            border: 2px solid #e8f0fe;
+        }
+
+        .image-container:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-preview {
+            width: 100%;
+            height: 350px;
+            position: relative;
+            background: linear-gradient(45deg, #f8f9fa 25%, transparent 25%, transparent 75%, #f8f9fa 75%, #f8f9fa),
+                        linear-gradient(45deg, #f8f9fa 25%, transparent 25%, transparent 75%, #f8f9fa 75%, #f8f9fa);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+            font-size: 1.1rem;
+        }
+
+        .image-preview img,
+        .image-preview video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .image-preview canvas {
+            display: none;
+        }
+
+        .upload-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: #8fa8b8;
+        }
+
+        .upload-placeholder svg {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 16px;
+            opacity: 0.6;
+        }
+
+        .controls {
+            padding: 20px;
+            background: linear-gradient(135deg, #f8fbff 0%, #e8f4f8 100%);
+            border-top: 1px solid #e3f2fd;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #81c784 0%, #a5d6a7 100%);
+            color: white;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(129, 199, 132, 0.4);
+            background: linear-gradient(135deg, #66bb6a 0%, #81c784 100%);
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, #64b5f6 0%, #90caf9 100%);
+            color: white;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-success:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(100, 181, 246, 0.4);
+            background: linear-gradient(135deg, #42a5f5 0%, #64b5f6 100%);
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+            background: #e0e0e0;
+        }
+
+        .results-section {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+            border: 2px solid #e8f0fe;
+        }
+
+        .results-header {
+            background: linear-gradient(135deg, #e1f5fe 0%, #b3e5fc 100%);
+            color: #0277bd;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .results-header h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .results-content {
+            min-height: 400px;
+        }
+
+        .result-json {
+            padding: 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #2c3e50;
+            font-family: 'Courier New', monospace;
+            overflow-y: auto;
+            min-height: 400px;
+        }
+
+        .result-json pre {
+            margin: 0;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            color: #34495e;
+        }
+
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            backdrop-filter: blur(5px);
+        }
+
+        .loading-spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid #e3f2fd;
+            border-top: 4px solid #81c784;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        .loading-text {
+            color: #558b2f;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .file-input {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+
+        .empty-state {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: #9ccc65;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .empty-state svg {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+            opacity: 0.4;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .header p {
+                font-size: 1rem;
+            }
+
+            .upload-section {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .main-content {
+                padding: 20px 15px;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                padding: 30px 15px;
+            }
+
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .image-preview {
+                height: 250px;
+            }
+
+            .btn {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="main container">
-		<section class="iupload">
-			<h3 class="text-center py-4">Object Classification</h3>
-			<div class="row">
-				<div class="img-part col-md-6">
-					<div class="image-part">
-						<video autoplay id="video" poster="https://img.freepik.com/free-vector/group-young-people-posing-photo_52683-18824.jpg?size=338&ext=jpg"></video>
-						<img src="" id="photo">
-						<canvas style="display:none;" id="canvas"></canvas>
-					</div>
-					<div class="btn-part">
-						<form id="upload-data pt-3" class="">
-							<div class="input-group mt-3 row">
-								<button type="button" class="btn btn-primary col-md-5 col-xs-5 ml-3 mr-4" id="uload">Upload</button>
-								<button id="send" type="button" class="btn btn-success col-md-5 col-xs-5">Predict</button>
-							</div>
+    <div class="container">
+        <div class="header">
+            <h1>
+                <span>🏥</span>
+                Medical Kidney Classification
+            </h1>
+            <p>AI-powered kidney image analysis for medical diagnosis support</p>
+        </div>
 
+        <div class="disclaimer">
+            ⚠️ <strong>Medical Disclaimer:</strong> This tool is for educational and research purposes only. 
+            Results should not be used for actual medical diagnosis. Always consult qualified healthcare professionals.
+        </div>
 
+        <div class="main-content">
+            <div class="upload-section">
+                <div class="image-container">
+                    <div class="image-preview" id="imagePreview">
+                        <video autoplay id="video" style="display: none;"></video>
+                        <img src="" id="photo" style="display: none;">
+                        <canvas id="canvas"></canvas>
+                        <div class="upload-placeholder" id="placeholder">
+                            <svg fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17l-3-3 1.5-1.5L9 14l6.5-6.5L17 9l-8 8z"/>
+                            </svg>
+                            <span>Select kidney image for analysis</span>
+                        </div>
+                    </div>
+                    <div class="controls">
+                        <div class="button-group">
+                            <button class="btn btn-primary" id="uploadBtn">
+                                📁 Upload Image
+                            </button>
+                            <button class="btn btn-success" id="predictBtn" disabled>
+                                🔬 Analyze
+                            </button>
+                        </div>
+                        <input type="file" id="fileInput" class="file-input" accept="image/*">
+                        <input type="hidden" id="apiUrl" value="../predict">
+                    </div>
+                </div>
 
+                <div class="results-section">
+                    <div class="results-header">
+                        <h2>
+                            <span>📊</span>
+                            Analysis Results
+                        </h2>
+                    </div>
+                    <div class="results-content">
+                        <div class="result-json" id="resultJson">
+                            <div class="empty-state">
+                                <svg fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0L19.2 12l-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
+                                </svg>
+                                <p>Technical data will appear here</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <div class="loading-overlay" id="loadingOverlay" style="display: none;">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Analyzing kidney image...</div>
+    </div>
 
+    <script>
+        let base64Data = "";
+        
+        // DOM elements
+        const uploadBtn = document.getElementById('uploadBtn');
+        const predictBtn = document.getElementById('predictBtn');
+        const fileInput = document.getElementById('fileInput');
+        const photo = document.getElementById('photo');
+        const placeholder = document.getElementById('placeholder');
+        const resultJson = document.getElementById('resultJson');
+        const loadingOverlay = document.getElementById('loadingOverlay');
+        const apiUrl = document.getElementById('apiUrl');
 
-							<!-- change url value  -->
+        // Upload button click
+        uploadBtn.addEventListener('click', () => {
+            fileInput.click();
+        });
 
+        // File input change
+        fileInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                // Validate file type
+                if (!file.type.startsWith('image/')) {
+                    alert('Please select a valid image file.');
+                    return;
+                }
 
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    const url = e.target.result;
+                    const img = new Image();
+                    img.crossOrigin = 'Anonymous';
+                    img.onload = () => {
+                        const canvas = document.createElement('canvas');
+                        const ctx = canvas.getContext('2d');
+                        canvas.height = img.height;
+                        canvas.width = img.width;
+                        ctx.drawImage(img, 0, 0);
+                        base64Data = canvas.toDataURL('image/jpeg', 1.0).replace(/^data:image.+;base64,/, '');
+                    };
+                    img.src = url;
+                    
+                    // Update UI
+                    photo.src = url;
+                    photo.style.display = 'block';
+                    placeholder.style.display = 'none';
+                    predictBtn.disabled = false;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
 
+        // Predict button click
+        predictBtn.addEventListener('click', () => {
+            sendRequest(base64Data);
+        });
 
-							<input type="hidden" class="form-control mr-2" id="url" placeholder="Enter REST Api url..." value="../predict"/>
-							<input name="upload" type="file" id="fileinput" style="position:absolute;top:-500px;"/><br/>
-						</form>
-					</div>
-				</div>
-				<div class="col-md-6 col-xs-12 right-part">
-					<h5 class="mb-2"><center>Prediction Results</center></h5>
-					<div class="row">
-						<div class="res-part2 col-md-5 col-xs-12"></div>
-						<div class="res-part col-md-5 col-xs-12"><div class="jsonRes"></div></div>
-					</div>
-				</div>
-			</div>
-		</section>
-	</div>
+        // Send request function
+        function sendRequest(imageData) {
+            if (!imageData) return;
 
-	<img class="logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIkAAAAlCAMAAABBJDpuAAAAVFBMVEX/fgD/iQA7NzIyMjMnNYInNYEnNYInNYEzMzInNYQnNYETJzsnNYIwN1wxMjNoTis4O1YrNm0xOF47PE9DP0dEQEVpTVkAJJ4nNYEOLJHJbiAzMzOmmmHRAAAAFnRSTlOh/vu+986oen9fP2UqEzQkFAIDAAEEILVBJQAAA3FJREFUWMPNmO2WoyAMQG0VBARtdVRs3/89NwkgaF1rd2aOm18tIrnkgwSz7n+R7LcV1ELkeS7E7VySRlyfQXJhTiO55c+liP4cEuH1X8E7gaV+S3Jv2zYZ/Vr+/Sdx2vP6doc/fSPcf/GOpLSFVXFUW8t+giRP47TOd60yk1hbxIhSP0ACKPWrvw7YBIT/lcQY84G3Wk17ugWQfg5UsQJpjflKSLQi7xTWyk0SXTJ4VnB5D1yccxmp4Z+mX5KGNS+SPXVNll0ulyxL0wYmloBB6zL/MpCoAgjAJiUM6w0SboMwPUdRogvNKcNM3smFdRvEcJJkKcflQa+X0pNIfBGW0zKqjyQtw4VLKQlI7ZLgdrRNSZDjMQx2GB4pCkxkCrfGWUTJ0Egan6muCHgJCUwtnCk0mrJ9Q8K5LUqtdSfynkAedhynaRqngVDaXLiJEAzkFkM71IuIlWRYtSQpbXSZDvQ7JPCei9brs+oaABkn74LRIkpFaVxGnzjvIxTYREOoEwn5r01JTDRTcO87Eu3zNUeTPKZpjrIRrNIDCjzALbPk7LJMIokOEQu2K7yKQAKvFDF9pVe0R+LGb7h1MMkw2ijjA/1zhSfSphvEAChXJEhAqwYStIJWXnTpvbdH4hTUwSQ2JRmQpILDLYbB7J41SYiLcNozu5Z3JMo7RxBJahI7WSRByCMkqJt9hySESbVJcvmARJGFExJmdBSl2oM2+T4JLWfgaGFptizlPUm1FydHSdyZ7UnS4ySph2kS0kJrkvr5NJg7dnrJnfxgxPozRPGtkyPNOxtaiDvbIAF9L+5B5zTI2BwlwXmM+U3zReav3o0F8oUEFFZ42McDZYomOUziFmezgWyo251Uc1nyKJol7URCEvIYUEbHYaEGQi9C9egwCdVfHwiaajfjKMUcHcRacCylhWJbJDfq47EEDhYqoIWjHnwDXZPpPiChPQelLU+Cbm4w50FmYgkvFwpiWwCC/Um/SLcNElOC9RVj6qWpCiEMvRUK4zLpdKmPw8rVldy/qxjn60wLrVLWJIPLiZJRr3fsvnOHPvare+lB93tb37T20D82jqOt+zNuXhuNvNhp7X+PpHb3rvV9R5xjE2SpyCN9ffQO+GtWIZr5Xnytz4gTMIRYfys47/uJEXny/aQ/95tSUwmU+uRvSp/IHzQqZYpYrQmxAAAAAElFTkSuQmCC" />
+            const url = apiUrl.value;
+            loadingOverlay.style.display = 'flex';
 
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '*'
+                },
+                body: JSON.stringify({ image: imageData })
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Clear previous results
+                resultJson.innerHTML = '';
 
-<div id="loading"><div class="loader"></div></div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+                // Process and display results
+                const resultData = data[0] || data;
 
-<script>
-var mybtn = document.getElementById('startbtn');
-var myvideo = document.getElementById('video');
-var mycanvas = document.getElementById('canvas');
-var myphoto = document.getElementById('photo');
-var base_data = "";
+                // Display JSON data
+                const pre = document.createElement('pre');
+                pre.textContent = JSON.stringify(resultData, null, 2);
+                resultJson.appendChild(pre);
 
-function sendRequest(base64Data){
-	var type = "json";
-	if(base64Data != "" || base64Data != null){
-		if(type == "imgtobase"){
-			$(".res-part").html("");
-			$(".res-part").html(base64Data);
-		}
-		else if(type == "basetoimg"){
-			var imageData = $("#imgstring").val();
-			$(".res-part").html("");
-			$(".res-part").append("<img src='data:image/jpeg;base64," + imageData + "' alt='' />");
-		}
-		else{
-			var url = $("#url").val();
-			$("#loading").show();
-			$.ajax({
-				url : url,
-				type: "post",
-				cache: false,
-				async: true,
-				crossDomain: true,
-				headers: {
-					'Content-Type': 'application/json',
-					'Access-Control-Allow-Origin':'*'
-				},
-				data:JSON.stringify({image:base64Data}),
-				success: function(res){
-					$(".res-part").html("");
-					$(".res-part2").html("");
-					try{
-						var imageData = res[1].image;
-						if(imageData.length > 100){
-							if(imageData.length > 10){$(".res-part2").append("<img class='resp-img' src='data:image/jpeg;base64," + imageData + "' alt='' />");}
-						}
-					}catch(e){}
-					$(".res-part").html("<pre>" + JSON.stringify(res[0], undefined, 2) + "</pre>");
-					$("#loading").hide();
-				}
-			});
-		}
-	}
-}
+                loadingOverlay.style.display = 'none';
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                resultJson.innerHTML = `
+                    <div class="empty-state">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM13 17h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                        </svg>
+                        <p>Error: ${error.message}</p>
+                    </div>
+                `;
+                loadingOverlay.style.display = 'none';
+            });
+        }
 
-$(document).ready(function(){
-	$("#loading").hide();
+        // Drag and drop functionality
+        const imagePreview = document.getElementById('imagePreview');
+        
+        imagePreview.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            imagePreview.style.borderColor = '#81c784';
+            imagePreview.style.backgroundColor = '#f1f8e9';
+        });
 
-	$('#send').click(function(evt){
-		sendRequest(base_data);
-    });
+        imagePreview.addEventListener('dragleave', (e) => {
+            e.preventDefault();
+            imagePreview.style.borderColor = '';
+            imagePreview.style.backgroundColor = '';
+        });
 
-    $('#uload').click(function(evt) {
-        $('#fileinput').focus().trigger('click');
-    });
-	$("#fileinput").change(function(){
-		if (this.files && this.files[0]){
-			var reader = new FileReader();
-			reader.onload = function (e){
-				var url = e.target.result;
-				var img = new Image();
-				img.crossOrigin = 'Anonymous';
-				img.onload = function(){
-					var canvas = document.createElement('CANVAS');
-					var ctx = canvas.getContext('2d');
-					canvas.height = this.height;
-					canvas.width = this.width;
-					ctx.drawImage(this, 0, 0);
-					base_data = canvas.toDataURL('image/jpeg', 1.0).replace(/^data:image.+;base64,/, '');
-					canvas = null;
-				};
-				img.src = url;
-				$('#photo').attr('src', url);
-				$('#photo').show();
-				$('#video').hide();
-			}
-			reader.readAsDataURL(this.files[0]);
-		}
-	});
-});
-
-</script>
+        imagePreview.addEventListener('drop', (e) => {
+            e.preventDefault();
+            imagePreview.style.borderColor = '';
+            imagePreview.style.backgroundColor = '';
+            
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                fileInput.files = files;
+                fileInput.dispatchEvent(new Event('change'));
+            }
+        });
+    </script>
 </body>
 </html>
